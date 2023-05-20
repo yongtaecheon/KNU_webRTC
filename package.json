@@ -1,0 +1,19 @@
+{
+  "name": "kurento-composite-call",
+  "version": "6.1.1-dev",
+  "private": true,
+  "scripts": {
+    "postinstall": "cd static && bower install"
+  },
+  "dependencies": {
+    "express": "^4.12.4",
+    "express-fileupload": "^1.4.0",
+    "kurento-client": "Kurento/kurento-client-js",
+    "mime": "^1.3.4",
+    "minimist": "^1.2.7",
+    "ws": "^3.3.1"
+  },
+  "devDependencies": {
+    "bower": "^1.4.1"
+  }
+}

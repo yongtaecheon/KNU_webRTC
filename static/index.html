@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>WebRTC service - HomePage</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+   <!-- <link href="carousel.css" rel="stylesheet"> -->
+  </head>
+  <body>
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">WebRTC Sevice</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+              <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="main.html">Meeting</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+    <main>
+      <div id="myCarousel" class="carousel slide" data-bs-ride="carousel" style="margin: 50px;">
+        <!-- <div class="carousel-indicators">
+          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        </div> -->
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <!-- <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg> -->
+            <img src="img/map_main.png" class="d-block w-100"><rect width="100%" height="100%" fill="#777" /></img>
+            <div class="container" align="center">
+                <h2>Service Map - Main</h2>
+                <p>This is how our service works.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="img/map_backend.png" class="d-block w-100"></img>
+            <!-- <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg> -->
+            <div class="container" align="center">
+                <h2>Service Map - Backend</h2>
+                <p>This is how our server works.</p>
+            </div>
+          </div>
+        </div>
+        <!-- <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button> -->
+      </div>
+  
+  <div class="container marketing">
+    <h1 align="center">Team Members</h1>
+    <hr class="solid">
+    <!-- Three columns of text below the carousel -->
+    <div class="row" align="center">
+      <div class="col">
+        <img src="img/seongwon.png" class="profile" width="140" height="140"></img>
+        <h2 class="fw-normal">이성원</h2>
+        <h4 class="fw-normal">Lee Seongwon</h4>
+        <p>18 심화컴퓨터전공<br>팀장, 백엔드 담당</p>
+      </div><!-- /.col-lg-4 -->
+      <div class="col">
+        <img src="img/wongeun.png" class="profile" width="140" height="140"></img>
+        <h2 class="fw-normal">이원근</h2>
+        <h4 class="fw-normal">Lee Wongeun</h4>
+        <p>18 심화컴퓨터전공<br>백엔드 담당</p>
+      </div><!-- /.col-lg-4 -->
+      <div class="col">
+        <img src="img/yongtae.png" class="profile" width="140" height="140"></img>
+        <h2 class="fw-normal">천용태</h2>
+        <h4 class="fw-normal">Cheon Yongtae</h4>
+        <p>18 글로벌SW융합전공<br>프런트엔드 담당</p>
+      </div><!-- /.col-lg-4 -->
+      <div class="col">
+        <img src="img/myungbin.png" class="profile" width="140" height="140"></img>
+        <h2 class="fw-normal">최명빈</h2>
+        <h4 class="fw-normal">Choi Myungbin</h4>
+        <p>20 심화컴퓨터전공<br>백엔드 담당</p>
+      </div><!-- /.col-lg-4 -->
+    </div><!-- /.row -->  
+    
+    <hr class="featurette-divider">
+
+    <div align="center">
+    <button class="btn btn-secondary btn-lg" onclick="location.href='main.html';">Start Webmeeting</button>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <footer class="container">
+        <p class="float-end"><a href="#">Back to top</a></p>
+        <p>&copy; 202202 종합설계프로젝트1 - 학부16_미디어서버 기반의 WebRTC서비스</p>
+      </footer>
+    </main>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="bower_components/adapter.js/adapter.js"></script>
+    <script src="bower_components/kurento-client/js/kurento-client.js"></script>
+    <script src="bower_components/kurento-utils/js/kurento-utils.js"></script>
+    <script src="js/index.js"></script>
+    <link href="carousel.css" rel="stylesheet">
+    <title>WebRTC servie - Webmeeting</title>
+    <script>
+        const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
+        const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
+    </script>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">WebRTC Sevice</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="main.html">Meeting</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+        <div class="row">
+            <div class="col" id="ipCamBig" align="center" style="margin: 0px 2px; padding: 50px 0px 0px">
+                <video id="ipCam" autoplay poster="img/CCTV_default.png" style="max-width:100%; height:auto;"></video>
+                <div class="btn-group" id="input-group" align="center">
+                    <a id="ipcam_call" href="#" class="btn btn-success" onclick="ipcam_start(); return false;">CCTV Start</a>
+                    <a id="ipcam_terminate" href="#" class="btn btn-danger" onclick="ipcam_stop(); return false;">CCTV Stop</a>
+                </div>
+            </div>
+            <div class="col" id="videoBig" align="center" style="margin: 0px 2px; padding: 50px 0px 0px">
+                <video id="video" autoplay poster="img/Camera_default.png" style="max-width:100%; height:auto;"></video>
+                <div class="btn-group" id="input-group" align="center">
+                    <a id="call" href="#" class="btn btn-success" onclick="start(); return false;">Start</a>
+                    <a id="terminate" href="#" class="btn btn-danger" onclick="stop(); return false;">Stop</a>
+                </div>
+            </div>
+        </div>
+    
+    <div class="btn-group-lg" id="input-group" align="center" style="padding: 50px 0px">
+        <form action="https://localhost:8443/upload" target = "param" method="POST" enctype="multipart/form-data" style="padding: 0px 0px 10px">
+            <input type="file" name="upfile" id="upload" hidden/>
+                <label for="upload" class="btn btn-secondary">
+                    Choose File
+                </label>
+            <span id="file-chosen" class="text-muted">file not chosen</span>
+            </input>
+            <input class="btn btn-success" type="submit" value="Upload"/>
+            <script>
+                // 파일 업로드 텍스트 
+                const uploadBtn = document.getElementById('upload');
+                const fileChosen = document.getElementById('file-chosen');
+                uploadBtn.addEventListener('change', function () {
+                    fileChosen.textContent = this.files[0].name
+                });
+            </script>
+        </form>
+
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" type="submit">
+                Download Files
+            </button>
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Download List</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <iframe id="if" name="param" height="500px" width="450px" style="padding: 15px" align="center"></iframe>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <form action="https://localhost:8443/download" target="param" method="GET" enctype="m,">
+                                <button class="btn btn-primary" type="submit">Load Download List</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+</body>
+</html>
