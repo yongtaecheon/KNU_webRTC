@@ -10,7 +10,7 @@
 |Backend|Backend|Frontend|Backend|
 
 ## 실행 화면
-![image01.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/75263000-d2f4-4607-9a7e-1882681fca2e/image01.png)
+![image01](https://github.com/yongtaecheon/KNU_webRTC/assets/94237345/36f5c374-7343-4f09-b1d8-4e99bcdd0d58)
 
 ## 1. 과제 수행배경
 어느 곳이든 현장에서의 안전에 대한 관제, 모니터링이 중요시 되고 있다. 최근 태풍 ‘힌남노’로 인하여 포항시 한 아파트 주차장에 주민이 오랜 시간 동안 갇히는 사고가 발생했다. 이러한 사고를 예방하기 위해서 빠른 대처 및 실시간 모니터링의 중요성이 대두되고 있다.
